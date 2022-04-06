@@ -1,0 +1,27 @@
+<h1>Dashboard</h1>
+<hr>
+
+<p>
+    Esta pagina solo funciona si estás autenticado
+</p>
+
+<h3>User info</h3>
+<hr>
+
+<tr>
+    <th>Nombre </th>
+    <th> ID</th>
+
+</tr>
+<tr>
+    <td>{{usuario.nombre}}</td>
+    <td>{{usuario.uid}}</td>
+
+</tr>
+<br>
+
+<button (click)="logout()"
+        type="button"
+        class="btn">
+    Logout
+</button>
