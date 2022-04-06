@@ -36,15 +36,6 @@ export class LoginComponent {
       }else{
         Swal.fire('Error de acceso', resp, 'error');
       }
-
-
-
-
-      // next: (resp) => {
-      //   console.log(resp)
-      //   this.router.navigateByUrl('/dashboard');
-      // },
-      // error: (msg) => {Swal.fire('Error', 'Credenciales incorrectas', 'error')}
     });
   }
 

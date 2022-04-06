@@ -26,8 +26,6 @@ export class AuthService {
   //con el "map" obtengo el resultado de la respuesta del estado (true o false) si hay un error obtengo el mensaje de la respuesta
   //Esto ultimo es asi por que el subscribe no maneja bien los errores de pagina (400) ya le facilito la información desde aqui
   //para un mejor manejo de la funicon login en login.component y a la vez almaceno el token en el local storage.
-  //NOTA: para obtener el token tuve que utilizar JSON.stringify() de lo contrario siempre daría "undefned" 
-  //explicación: https://hashnode.com/post/localstorage-returning-undefined-ckajqts2q02vglns1ohw982xw
   login(email: string, password: string) {
     return this.http.post<AuthResponse>(`${this.baseUrl}/auth`, {email, password})
     .pipe(
@@ -55,7 +53,6 @@ export class AuthService {
     return this.http.get<AuthResponse>(`${this.baseUrl}/auth/renew`, {headers})
     .pipe(
       map(resp => {
-        localStorage.setItem('x-token', resp.token!);
         this._usuario = {
           nombre: resp.nombre!,
           uid: resp.uid!,
