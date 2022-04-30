@@ -23,6 +23,8 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class DashboardComponent implements OnInit{
 
+  email: any
+
   ngOnInit(): void {
   }
 
@@ -30,8 +32,9 @@ export class DashboardComponent implements OnInit{
     return this.authService.usuario;
   }
 
-  constructor(private router: Router,
-              private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService) { 
+    this.email = this.usuario.email
+  }
 
   logout() {
 
